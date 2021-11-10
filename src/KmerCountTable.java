@@ -8,6 +8,7 @@ public class KmerCountTable {
     int numberOfElements;
     ArrayList<LinkedList<KmerCount>> table;
 
+    // Constructs an initially empty hash table with capacity of 7
     public KmerCountTable() {
         // Declare needed arrays and linked lists and initialize
         // variables as appropriate
@@ -28,30 +29,37 @@ public class KmerCountTable {
         }
     }
 
+    // Returns the size of the hash table in terms of how many items have
+    // been stored in the table
     public int size() {
         // Return how many elements have been added to the table
         return numberOfElements;
     }
 
+    // Returns the load factor (size / capacity) for the hash table
     private double getLoadFactor() {
         // Compute the load factor as the ratio of the number of elements
         // held in the table over the capacity value
         return (1.0 * numberOfElements)/capacity;
     }
 
+    // See project guidelines for description
     public void increment(String keyKmerArg) {
         // TODO: Complete the increment method as per the project guidelines
     }
 
+    // See project guidelines for description
     public Integer retrieve(String keyKmerArg) {
         // TODO: Complete the retrieve method as per the project guidelines
         return null;
     }
 
+    // See project guidelines for description
     private void resize() {
         // TODO: Complete the resize method as per the project guidelines
     }
 
+    // Prints descriptive information about and the contents of the hash table
     public void print() {
         // This method does the following:
         // Print some information about the hashtable

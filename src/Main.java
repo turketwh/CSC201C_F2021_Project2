@@ -5,19 +5,25 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+        // Use 3-mers (ART, KLM, NGT)
         int kmerLength = 3;
 
+        // Variables useful for processing the sequence data
         String kmer;
         Integer count;
-
         String sequence = null;
         int sequenceLength = -1;
         int stoppingPoint = -1;
 
+        // A counter for using with for loops
         int index;
 
+        // Create the hash table
         KmerCountTable hashTable = new KmerCountTable();
 
+        // Open the prx1.txt file and read each line
+        // Break each line into 3-mers
+        // For each 3-mer, increment its count by updating the hashtable
         Scanner scanner = new Scanner(new File("prx1.txt"));
         while (scanner.hasNextLine()) {
             sequence = scanner.nextLine();
@@ -32,8 +38,13 @@ public class Main {
         }
         scanner.close();
 
+        // Print descriptive information about and the contents of the hash table
         hashTable.print();
 
+        // Open the query.txt file and reach each line holding a 3-mer
+        // For each 3-mer, retrieve it (and its count) from the hashtable
+        // and report whether, and if appropriate, how often it occurred
+        // in the sequence data
         scanner = new Scanner(new File("query.txt"));
         while (scanner.hasNextLine()) {
             kmer = scanner.nextLine();
